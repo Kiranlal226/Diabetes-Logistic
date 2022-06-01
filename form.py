@@ -23,8 +23,7 @@ def gfg():
         diabetes = pd.read_csv('diabetes.csv')
         
 
-        feature_cols = ['Pregnancies', 'Insulin', 'BMI',
-                        'Age', 'Glucose', 'BloodPressure', 'DiabetesPedigreeFunction']
+        feature_cols = ['Age']
         X = diabetes[feature_cols]
         y = diabetes.Outcome
 
@@ -50,7 +49,7 @@ def gfg():
         Diabetes= request.form.get("Diabetes")
         Age= request.form.get("Age")
 
-        Xnew = [[Glucose],[Pregnancies],[BP],[Skin],[Insulin],[BMI],[Diabetes],[Age]]
+        Xnew = [[Age]]
 
         result = model.predict(Xnew)
 
@@ -59,7 +58,7 @@ def gfg():
 
         # getting input
 
-        final=str(value[0])
+        final="The Outcome of Diabetes is " + str(value[0])
 
 
 
